@@ -5,7 +5,7 @@ export async function GET(request: Request) {
 
   const code = searchParams.get("code");
 
-  const response = await fetch(
+  const tokenResponse = await fetch(
     "https://www.strava.com/oauth/token",
     {
       method: "POST",
@@ -21,7 +21,21 @@ export async function GET(request: Request) {
     }
   );
 
-  const data = await response.json();
+  const tokenData = await tokenResponse.json();
 
-  return NextResponse.json(data);
+  const activitiesResponse = await fetch(
+    "https://www.strava.com/api/v3/athlete/activities",
+    {
+      headers: {
+        Authorization: Bearer ${tokenData.access_token},
+      },
+    }
+  );
+
+  const activities = await activitiesResponse.json();
+
+  return NextResponse.json({
+    athlete: tokenData.athlete,
+    activities,
+  });
 }
