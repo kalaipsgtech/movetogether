@@ -34,8 +34,8 @@ export async function GET(request: Request) {
 
   const activities = await activitiesResponse.json();
 
-  return NextResponse.json({
-    athlete: tokenData.athlete,
-    activities,
-  });
-}
+const athlete = tokenData.athlete;
+
+return NextResponse.redirect(
+  `${process.env.NEXT_PUBLIC_SITE_URL}/connected?name=${athlete.firstname}`
+);
