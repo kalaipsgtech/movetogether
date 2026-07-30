@@ -27,7 +27,7 @@ export async function GET(request: Request) {
     "https://www.strava.com/api/v3/athlete/activities",
     {
       headers: {
-        Authorization: Bearer ${tokenData.access_token},
+        Authorization: `Bearer ${tokenData.access_token}`,
       },
     }
   );
