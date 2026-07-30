@@ -1,8 +1,10 @@
-export default function ConnectedPage({
+export default async function ConnectedPage({
   searchParams,
 }: {
-  searchParams: { name?: string };
+  searchParams: Promise<{ name?: string }>;
 }) {
+  const params = await searchParams;
+
   return (
     <main
       style={{
@@ -13,7 +15,7 @@ export default function ConnectedPage({
     >
       <h1>✅ Strava Connected</h1>
 
-      <h2>Welcome {searchParams.name}</h2>
+      <h2>Welcome {params.name}</h2>
 
       <p>
         Your account has been successfully linked.
