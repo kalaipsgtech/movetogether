@@ -6,12 +6,7 @@ export default function Home() {
     const redirectUri = process.env.NEXT_PUBLIC_REDIRECT_URI;
 
     const authUrl =
-      'https://www.strava.com/oauth/authorize +
-      ?client_id=${clientId} +
-      &response_type=code +
-      &redirect_uri=${redirectUri} +
-      &approval_prompt=force +
-      &scope=read,activity:read_all';
+      `https://www.strava.com/oauth/authorize?client_id=${clientId}&response_type=code&redirect_uri=${redirectUri}&approval_prompt=force&scope=read,activity:read_all`;
 
     window.location.href = authUrl;
   };
