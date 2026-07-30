@@ -39,3 +39,4 @@ const athlete = tokenData.athlete;
 return NextResponse.redirect(
   `${process.env.NEXT_PUBLIC_SITE_URL}/connected?name=${athlete.firstname}`
 );
+}
