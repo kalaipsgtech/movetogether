@@ -48,8 +48,8 @@ const athlete = tokenData.athlete;
   ])
   .select();
 
-console.log("Supabase Data:", data);
-console.log("Supabase Error:", error);
+console.log("Supabase Data:", JSON.stringify(data));
+console.log("Supabase Error:", JSON.stringify(error));
 
 return NextResponse.redirect(
   `${process.env.NEXT_PUBLIC_SITE_URL}/connected?name=${athlete.firstname}`
