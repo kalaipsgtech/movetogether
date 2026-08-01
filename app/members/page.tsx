@@ -5,6 +5,8 @@ export default async function MembersPage() {
     .from("athletes")
     .select("athlete_id, first_name, last_name, connected_at, total_distance_km, last_sync")
     .order("connected_at", { ascending: true });
+  console.log("Athletes Count:", athletes?.length);
+  console.log("Athletes Data:", athletes);
 
   if (error) {
     return (
