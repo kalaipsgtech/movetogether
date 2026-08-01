@@ -63,7 +63,7 @@ console.log(
   }));
 
   const { error: activitiesError } = await supabase
-    .from("activities")
+    .from("Activities")
     .upsert(activityRows, {
       onConflict: "activity_id",
     });
