@@ -34,6 +34,21 @@ export async function GET(request: Request) {
   );
 
   const activities = await activitiesResponse.json();
+  console.log(
+  "Activities Response:",
+  JSON.stringify(activities, null, 2)
+);
+
+console.log(
+  "Is Array:",
+  Array.isArray(activities)
+);
+
+console.log(
+  "Activities Length:",
+  Array.isArray(activities) ? activities.length : 0
+);
+  
   if (Array.isArray(activities) && activities.length > 0) {
   const activityRows = activities.map((activity) => ({
     athlete_id: tokenData.athlete.id,
