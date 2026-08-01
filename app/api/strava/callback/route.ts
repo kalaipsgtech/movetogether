@@ -72,6 +72,15 @@ console.log(
     "Activities Error:",
     JSON.stringify(activitiesError, null, 2)
   );
+    console.log(
+  "Activity Rows Count:",
+  activityRows.length
+);
+
+console.log(
+  "First Activity Row:",
+  JSON.stringify(activityRows[0], null, 2)
+);
 }
 
 const athlete = tokenData.athlete;
