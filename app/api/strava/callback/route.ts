@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { supabase } from "@/lib/supabase";
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
@@ -35,6 +36,16 @@ export async function GET(request: Request) {
   const activities = await activitiesResponse.json();
 
 const athlete = tokenData.athlete;
+  await supabase
+  .from("athletes")
+  .insert([
+    {
+      athlete_id: athlete.id,
+      first_name: athlete.firstname,
+      last_name: athlete.lastname,
+      refresh_token: tokenData.refresh_token,
+    },
+  ]);
 
 return NextResponse.redirect(
   `${process.env.NEXT_PUBLIC_SITE_URL}/connected?name=${athlete.firstname}`
