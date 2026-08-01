@@ -54,14 +54,33 @@ console.log(
 );
   
   if (Array.isArray(activities) && activities.length > 0) {
-  const activityRows = activities.map((activity) => ({
+  const activityRows = activities.map((activity) => {
+  let activityType = "Walk";
+  let pointsPerKm = 1;
+
+  if (activity.type === "Ride") {
+    activityType = "Ride";
+    pointsPerKm = 0.5;
+  }
+
+  if (activity.type === "Run") {
+    activityType = "Run";
+    pointsPerKm = 2;
+  }
+
+  const distanceKm = activity.distance / 1000;
+
+  return {
     athlete_id: tokenData.athlete.id,
     activity_id: activity.id,
     activity_name: activity.name,
     distance: activity.distance,
     moving_time: activity.moving_time,
     activity_date: activity.start_date,
-  }));
+    activity_type: activityType,
+    points: distanceKm * pointsPerKm,
+  };
+});
 
   const { error: activitiesError } = await supabase
     .from("Activities")
