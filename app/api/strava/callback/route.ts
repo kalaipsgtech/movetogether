@@ -36,7 +36,7 @@ export async function GET(request: Request) {
   const activities = await activitiesResponse.json();
 
 const athlete = tokenData.athlete;
-  await supabase
+  const { data, error } = await supabase
   .from("athletes")
   .insert([
     {
@@ -45,7 +45,11 @@ const athlete = tokenData.athlete;
       last_name: athlete.lastname,
       refresh_token: tokenData.refresh_token,
     },
-  ]);
+  ])
+  .select();
+
+console.log("Supabase Data:", data);
+console.log("Supabase Error:", error);
 
 return NextResponse.redirect(
   `${process.env.NEXT_PUBLIC_SITE_URL}/connected?name=${athlete.firstname}`
