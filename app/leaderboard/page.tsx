@@ -8,7 +8,12 @@ export default async function LeaderboardPage() {
     .select(
       "athlete_id, first_name, last_name, total_distance_km, last_sync"
     )
-    .order("total_distance_km", { ascending: false });
+    const sortedAthletes = (athletes || [])
+      .sort(
+          (a, b) =>
+            (b.total_distance_km || 0) -
+            (a.total_distance_km || 0)
+  );
 
   if (error) {
     return (
