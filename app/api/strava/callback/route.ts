@@ -34,6 +34,7 @@ export async function GET(request: Request) {
   );
 
   const activities = await activitiesResponse.json();
+  console.log("Activities:", activities);
   console.log(
   "Activities Response:",
   JSON.stringify(activities, null, 2)
