@@ -62,6 +62,10 @@ export default async function MembersPage() {
               <small>
                 Athlete ID: {athlete.athlete_id}
               </small>
+              <br />
+               <small>
+                 Connected: {new Date(athlete.connected_at).toLocaleDateString()}
+               </small>
             </div>
           ))}
         </div>
