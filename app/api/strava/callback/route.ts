@@ -72,6 +72,29 @@ console.log(
     "Activities Error:",
     JSON.stringify(activitiesError, null, 2)
   );
+    const totalDistance =
+  activities.reduce(
+    (sum, activity) => sum + activity.distance,
+    0
+  ) / 1000;
+
+const { error: athleteSummaryError } = await supabase
+  .from("athletes")
+  .update({
+    total_distance_km: totalDistance,
+    last_sync: new Date().toISOString(),
+  })
+  .eq("athlete_id", athlete.id);
+
+console.log(
+  "Athlete Summary Error:",
+  JSON.stringify(athleteSummaryError, null, 2)
+);
+
+console.log(
+  "Total Distance KM:",
+  totalDistance
+);
     console.log(
   "Activity Rows Count:",
   activityRows.length
