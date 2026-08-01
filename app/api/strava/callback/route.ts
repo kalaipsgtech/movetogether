@@ -36,9 +36,9 @@ export async function GET(request: Request) {
   const activities = await activitiesResponse.json();
 
 const athlete = tokenData.athlete;
-  const { data, error } = await supabase
+  const { error } = await supabase
   .from("athletes")
-   .upsert(
+  .upsert(
     {
       athlete_id: athlete.id,
       first_name: athlete.firstname,
@@ -49,9 +49,7 @@ const athlete = tokenData.athlete;
       onConflict: "athlete_id",
     }
   );
-  .select();
 
-console.log("Supabase Data:", JSON.stringify(data, null, 2));
 console.log("Supabase Error:", JSON.stringify(error, null, 2));
 console.log("Athlete:", JSON.stringify(athlete, null, 2));
 
