@@ -34,6 +34,27 @@ export async function GET(request: Request) {
   );
 
   const activities = await activitiesResponse.json();
+  if (Array.isArray(activities) && activities.length > 0) {
+  const activityRows = activities.map((activity) => ({
+    athlete_id: tokenData.athlete.id,
+    activity_id: activity.id,
+    activity_name: activity.name,
+    distance: activity.distance,
+    moving_time: activity.moving_time,
+    activity_date: activity.start_date,
+  }));
+
+  const { error: activitiesError } = await supabase
+    .from("activities")
+    .upsert(activityRows, {
+      onConflict: "activity_id",
+    });
+
+  console.log(
+    "Activities Error:",
+    JSON.stringify(activitiesError, null, 2)
+  );
+}
 
 const athlete = tokenData.athlete;
   const { error } = await supabase
