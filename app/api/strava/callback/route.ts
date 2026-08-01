@@ -38,14 +38,17 @@ export async function GET(request: Request) {
 const athlete = tokenData.athlete;
   const { data, error } = await supabase
   .from("athletes")
-  .insert([
+   .upsert(
     {
       athlete_id: athlete.id,
       first_name: athlete.firstname,
       last_name: athlete.lastname,
       refresh_token: tokenData.refresh_token,
     },
-  ])
+    {
+      onConflict: "athlete_id",
+    }
+  );
   .select();
 
 console.log("Supabase Data:", JSON.stringify(data, null, 2));
