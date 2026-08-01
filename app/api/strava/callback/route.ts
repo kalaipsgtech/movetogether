@@ -34,6 +34,8 @@ export async function GET(request: Request) {
   );
 
   const activities = await activitiesResponse.json();
+  console.log("=== ACTIVITIES START ===");
+console.log("Activities:", JSON.stringify(activities, null, 2));
   console.log("Activities:", activities);
   console.log(
   "Activities Response:",
