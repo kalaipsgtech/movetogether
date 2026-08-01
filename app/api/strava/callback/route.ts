@@ -23,6 +23,7 @@ export async function GET(request: Request) {
   );
 
   const tokenData = await tokenResponse.json();
+  const athlete = tokenData.athlete;
 
   const activitiesResponse = await fetch(
     "https://www.strava.com/api/v3/athlete/activities",
@@ -84,7 +85,7 @@ const { error: athleteSummaryError } = await supabase
     total_distance_km: totalDistance,
     last_sync: new Date().toISOString(),
   })
-  .eq("athlete_id", athlete.id);
+  .eq("athlete_id", tokenData.athlete.id);
 
 console.log(
   "Athlete Summary Error:",
@@ -106,7 +107,6 @@ console.log(
 );
 }
 
-const athlete = tokenData.athlete;
   const { error } = await supabase
   .from("athletes")
   .upsert(
