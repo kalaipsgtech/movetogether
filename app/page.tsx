@@ -39,11 +39,12 @@ export default function Home() {
         Connect Strava
       </button>
       <br />
-<br />
-
-/members
-  View Connected Members
-</a>
+      <br />
+      
+      /members
+      <a> 
+        View Connected Members
+      </a>
     </main>
   );
 }
