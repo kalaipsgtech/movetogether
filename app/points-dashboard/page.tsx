@@ -48,7 +48,7 @@ export default async function PointsDashboardPage() {
         runPoints;
 
       return {
-        name: ${athlete.first_name} ${athlete.last_name},
+        name: `${athlete.first_name} ${athlete.last_name}`,
         ridePoints,
         walkPoints,
         runPoints,
