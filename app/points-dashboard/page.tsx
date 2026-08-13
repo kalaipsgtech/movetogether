@@ -105,7 +105,8 @@ const runKm = athleteActivities
 
       <table
   style={{
-    width: "100%",
+    width: "auto",
+    margin: "0 auto",
     borderCollapse: "collapse",
     background: "white",
     borderRadius: "12px",
@@ -115,7 +116,14 @@ const runKm = athleteActivities
 >
         <thead>
           <tr>
-            <th>Rank</th>
+            <th
+  style={{
+    border: "1px solid #D1D5DB",
+    padding: "12px",
+  }}
+>
+  Rank
+</th>
             <th>Name</th>
             <th>Walk (km)</th>
             <th>Ride (km)</th>
@@ -143,7 +151,14 @@ const runKm = athleteActivities
     : index + 1}
 </td>
 
-<td>{row.name}</td>
+<td
+  style={{
+    border: "1px solid #D1D5DB",
+    padding: "10px 15px",
+  }}
+>
+  {row.name}
+</td>
 
 <td>{row.walkKm.toFixed(1)} km </td>
 
