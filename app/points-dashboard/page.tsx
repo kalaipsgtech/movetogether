@@ -149,7 +149,7 @@ const runKm = athleteActivities
 
 <td>{row.streakDays}</td>
 
-<td>{row.totalPoints.toFixed(2)}</td>
+<td>{Math.round(row.totalPoints)}</td>
               
             </tr>
           ))}
