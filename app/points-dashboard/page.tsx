@@ -104,11 +104,15 @@ const runKm = athleteActivities
       </h1>
 
       <table
-        style={{
-          width: "100%",
-          borderCollapse: "collapse",
-        }}
-      >
+  style={{
+    width: "100%",
+    borderCollapse: "collapse",
+    background: "white",
+    borderRadius: "12px",
+    overflow: "hidden",
+    boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
+  }}
+>
         <thead>
           <tr>
             <th>Rank</th>
