@@ -202,7 +202,7 @@ const runKm = athleteActivities
     padding: "10px 15px",
   }}
 >
-  {row.totalPoints}
+  {Math.round(row.totalPoints)}
 </td>
               
             </tr>
