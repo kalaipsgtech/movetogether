@@ -21,6 +21,26 @@ export default async function PointsDashboardPage() {
             a.athlete_id === athlete.athlete_id
         ) || [];
 
+      const rideKm = athleteActivities
+  .filter((a) => a.activity_type === "Ride")
+  .reduce(
+    (sum, a) => sum + ((a.distance || 0) / 1000),
+    0
+  );
+
+const walkKm = athleteActivities
+  .filter((a) => a.activity_type === "Walk")
+  .reduce(
+    (sum, a) => sum + ((a.distance || 0) / 1000),
+    0
+  );
+
+const runKm = athleteActivities
+  .filter((a) => a.activity_type === "Run")
+  .reduce(
+    (sum, a) => sum + ((a.distance || 0) / 1000),
+    0
+  );
       const ridePoints = athleteActivities
         .filter((a) => a.activity_type === "Ride")
         .reduce(
@@ -48,12 +68,17 @@ export default async function PointsDashboardPage() {
         runPoints;
 
       return {
-        name: `${athlete.first_name} ${athlete.last_name}`,
-        ridePoints,
-        walkPoints,
-        runPoints,
-        totalPoints,
-      };
+  name: `${athlete.first_name} ${athlete.last_name}`,
+
+  walkKm,
+  rideKm,
+  runKm,
+
+  totalPoints,
+
+  streakDays: 0, // temporary
+};
+      
     }) || [];
 
   rows.sort(
@@ -98,29 +123,20 @@ export default async function PointsDashboardPage() {
                 textAlign: "center",
               }}
             >
-              <td>{row.name}</td>
+<td>{index + 1}</td>
 
-              <td>0.5</td>
-              <td>1</td>
-              <td>2</td>
+<td>{row.name}</td>
 
-              <td>
-                {row.ridePoints.toFixed(2)}
-              </td>
+<td>{row.walkKm.toFixed(1)}</td>
 
-              <td>
-                {row.walkPoints.toFixed(2)}
-              </td>
+<td>{row.rideKm.toFixed(1)}</td>
 
-              <td>
-                {row.runPoints.toFixed(2)}
-              </td>
+<td>{row.runKm.toFixed(1)}</td>
 
-              <td>
-                {row.totalPoints.toFixed(2)}
-              </td>
+<td>{row.streakDays}</td>
 
-              <td>{index + 1}</td>
+<td>{row.totalPoints.toFixed(2)}</td>
+              
             </tr>
           ))}
         </tbody>
