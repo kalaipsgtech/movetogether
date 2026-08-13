@@ -2,16 +2,49 @@ import { supabase } from "@/lib/supabase";
 
 export const dynamic = "force-dynamic";
 
+function calculateStreak(activities) {
+  const uniqueDates = [
+    ...new Set(
+      activities.map((a) =>
+        new Date(a.activity_date)
+          .toISOString()
+          .split("T")[0]
+      )
+    ),
+  ].sort((a, b) => b.localeCompare(a));
+
+  if (uniqueDates.length === 0) return 0;
+
+  let streak = 1;
+  let prevDate = new Date(uniqueDates[0]);
+
+  for (let i = 1; i < uniqueDates.length; i++) {
+    const currentDate = new Date(uniqueDates[i]);
+
+    const diffDays =
+      (prevDate - currentDate) /
+      (1000 * 60 * 60 * 24);
+
+    if (diffDays === 1) {
+      streak++;
+      prevDate = currentDate;
+    } else {
+      break;
+    }
+  }
+
+  return streak;
+}
 export default async function PointsDashboardPage() {
   const { data: athletes } = await supabase
     .from("athletes")
     .select("athlete_id, first_name, last_name");
 
-  const { data: activities } = await supabase
-    .from("Activities")
-    .select(
-      "athlete_id, activity_type, distance, points"
-    );
+ const { data: activities } = await supabase
+  .from("Activities")
+  .select(
+    "athlete_id, activity_type, distance, points, activity_date"
+  );
 
   const rows =
     athletes?.map((athlete) => {
@@ -21,6 +54,9 @@ export default async function PointsDashboardPage() {
             a.athlete_id === athlete.athlete_id
         ) || [];
 
+      const streakDays =
+  calculateStreak(athleteActivities);
+      
       const rideKm = athleteActivities
   .filter((a) => a.activity_type === "Ride")
   .reduce(
@@ -74,9 +110,9 @@ const runKm = athleteActivities
   rideKm,
   runKm,
 
-  totalPoints,
+  streakDays,
 
-  streakDays: 0, // temporary
+  totalPoints,
 };
       
     }) || [];
