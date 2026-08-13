@@ -129,7 +129,15 @@ const runKm = athleteActivities
                 textAlign: "center",
               }}
             >
-<td>{index + 1}</td>
+<td>
+  {index === 0
+    ? "🥇"
+    : index === 1
+    ? "🥈"
+    : index === 2
+    ? "🥉"
+    : index + 1}
+</td>
 
 <td>{row.name}</td>
 
