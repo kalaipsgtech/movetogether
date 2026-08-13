@@ -160,15 +160,50 @@ const runKm = athleteActivities
   {row.name}
 </td>
 
-<td>{row.walkKm.toFixed(1)} km </td>
+<td
+  style={{
+    border: "1px solid #D1D5DB",
+    padding: "10px 15px",
+  }}
+>
+  {row.walkKm.toFixed(1)}
+</td>
 
-<td>{row.rideKm.toFixed(1)} km </td>
+<td
+  style={{
+    border: "1px solid #D1D5DB",
+    padding: "10px 15px",
+  }}
+>
+  {row.rideKm.toFixed(1)}
+</td>
 
-<td>{row.runKm.toFixed(1)} km </td>
+<td
+  style={{
+    border: "1px solid #D1D5DB",
+    padding: "10px 15px",
+  }}
+>
+  {row.runKm.toFixed(1)}
+</td>
 
-<td>{row.streakDays}</td>
+<td
+  style={{
+    border: "1px solid #D1D5DB",
+    padding: "10px 15px",
+  }}
+>
+  {row.streakDays}
+</td>
 
-<td>{Math.round(row.totalPoints)}</td>
+<td
+  style={{
+    border: "1px solid #D1D5DB",
+    padding: "10px 15px",
+  }}
+>
+  {row.totalPoints}
+</td>
               
             </tr>
           ))}
