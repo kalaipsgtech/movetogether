@@ -141,11 +141,11 @@ const runKm = athleteActivities
 
 <td>{row.name}</td>
 
-<td>{row.walkKm.toFixed(1)}</td>
+<td>{row.walkKm.toFixed(1)} km </td>
 
-<td>{row.rideKm.toFixed(1)}</td>
+<td>{row.rideKm.toFixed(1)} km </td>
 
-<td>{row.runKm.toFixed(1)}</td>
+<td>{row.runKm.toFixed(1)} km </td>
 
 <td>{row.streakDays}</td>
 
