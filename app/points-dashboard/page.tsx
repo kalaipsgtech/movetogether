@@ -2,7 +2,7 @@ import { supabase } from "@/lib/supabase";
 
 export const dynamic = "force-dynamic";
 
-function calculateStreak(activities) {
+function calculateStreak(activities: any[]) {
   const uniqueDates = [
     ...new Set(
       activities.map((a) =>
