@@ -80,18 +80,13 @@ export default async function PointsDashboardPage() {
       >
         <thead>
           <tr>
+            <th>Rank</th>
             <th>Name</th>
-
-            <th>Ride/km</th>
-            <th>Walk/km</th>
-            <th>Run/km</th>
-
-            <th>Ride Points</th>
-            <th>Walk Points</th>
-            <th>Run Points</th>
-
+            <th>Walk (km)</th>
+            <th>Ride (km)</th>
+            <th>Run (km)</th>
+            <th>Streak</th>
             <th>Total Points</th>
-            <th>Ranking</th>
           </tr>
         </thead>
 
