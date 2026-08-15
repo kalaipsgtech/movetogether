@@ -136,12 +136,63 @@ const runKm = athleteActivities
 >
   Rank
 </th>
-            <th>Name</th>
-            <th>Walk (km)</th>
-            <th>Ride (km)</th>
-            <th>Run (km)</th>
-            <th>Streak</th>
-            <th>Total Points</th>
+          
+            <th
+  style={{
+    border: "1px solid #BFC5CC",
+    padding: "12px",
+    textAlign: "center",
+  }}
+>
+  Name
+</th>
+            <th
+  style={{
+    border: "1px solid #BFC5CC",
+    padding: "12px",
+    textAlign: "center",
+  }}
+>
+  Walk
+</th>
+            
+            <th
+  style={{
+    border: "1px solid #BFC5CC",
+    padding: "12px",
+    textAlign: "center",
+  }}
+>
+  Ride
+</th>
+            <th
+  style={{
+    border: "1px solid #BFC5CC",
+    padding: "12px",
+    textAlign: "center",
+  }}
+>
+  Run
+</th>
+            <th
+  style={{
+    border: "1px solid #BFC5CC",
+    padding: "12px",
+    textAlign: "center",
+  }}
+>
+  Streak
+</th>
+            <th
+  style={{
+    border: "1px solid #BFC5CC",
+    padding: "12px",
+    textAlign: "center",
+  }}
+>
+  Total Points
+</th>
+
           </tr>
         </thead>
 
