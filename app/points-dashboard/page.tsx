@@ -102,15 +102,14 @@ const runKm = athleteActivities
       "linear-gradient(135deg, #FFF1F2, #FFE4E6, #FCE7F3)",
   }}
 >
-  <h1
+ <h1
   style={{
+    fontFamily: "'Trebuchet MS', 'Segoe UI', sans-serif",
     fontSize: "40px",
     fontWeight: "900",
     textAlign: "center",
-    marginBottom: "30px",
     color: "#0F766E",
     textShadow: "2px 2px 8px rgba(0,0,0,0.15)",
-    letterSpacing: "1.5px",
   }}
 >
   🏆 MoveTogether Fitness Challenge
