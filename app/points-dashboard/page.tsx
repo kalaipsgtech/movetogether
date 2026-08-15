@@ -124,7 +124,7 @@ const runKm = athleteActivities
     background: "white",
     borderRadius: "12px",
     overflow: "hidden",
-    boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
+    boxShadow: "0 10px 30px rgba(0,0,0,0.15)",
   }}
 >
         <thead>
