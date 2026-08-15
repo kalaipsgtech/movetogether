@@ -146,6 +146,7 @@ const runKm = athleteActivities
 >
   Name
 </th>
+
             <th
   style={{
     border: "1px solid #BFC5CC",
@@ -154,6 +155,34 @@ const runKm = athleteActivities
   }}
 >
   Walk
+  <br />
+  <span
+    style={{
+      fontSize: "12px",
+      color: "#666",
+    }}
+  >
+    (km)
+  </span>
+</th>
+            
+           <th
+  style={{
+    border: "1px solid #BFC5CC",
+    padding: "12px",
+    textAlign: "center",
+  }}
+>
+  Ride
+  <br />
+  <span
+    style={{
+      fontSize: "12px",
+      color: "#666",
+    }}
+  >
+    (km)
+  </span>
 </th>
             
             <th
@@ -163,16 +192,16 @@ const runKm = athleteActivities
     textAlign: "center",
   }}
 >
-  Ride
-</th>
-            <th
-  style={{
-    border: "1px solid #BFC5CC",
-    padding: "12px",
-    textAlign: "center",
-  }}
->
   Run
+  <br />
+  <span
+    style={{
+      fontSize: "12px",
+      color: "#666",
+    }}
+  >
+    (km)
+  </span>
 </th>
             <th
   style={{
