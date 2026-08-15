@@ -99,19 +99,18 @@ const runKm = athleteActivities
         fontFamily: "Arial",
       }}
     >
-   <h1
+  <h1
   style={{
-    fontSize: "36px",
-    fontWeight: "800",
+    fontSize: "40px",
+    fontWeight: "900",
     textAlign: "center",
     marginBottom: "30px",
-    background: "linear-gradient(90deg, #0F766E, #14B8A6, #22C55E)",
-    WebkitBackgroundClip: "text",
-    WebkitTextFillColor: "transparent",
-    letterSpacing: "1px",
+    color: "#0F766E",
+    textShadow: "2px 2px 8px rgba(0,0,0,0.15)",
+    letterSpacing: "1.5px",
   }}
 >
-  🏆 MoveTogether Leaderboard
+  🏆 MoveTogether Fitness Challenge
 </h1>
 
       <table
