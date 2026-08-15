@@ -93,12 +93,15 @@ const runKm = athleteActivities
   );
 
   return (
-    <main
-      style={{
-        padding: "40px",
-        fontFamily: "Arial",
-      }}
-    >
+   <main
+  style={{
+    padding: "40px",
+    fontFamily: "Arial",
+    minHeight: "100vh",
+    background:
+      "linear-gradient(135deg, #FFF1F2, #FFE4E6, #FCE7F3)",
+  }}
+>
   <h1
   style={{
     fontSize: "40px",
