@@ -100,8 +100,6 @@ const runKm = athleteActivities
   minHeight: "100vh",
   width: "100%",
   overflowX: "hidden",
-    width: "100%",
-    overflowX: "hidden",
     background:
       "linear-gradient(135deg, #FFF1F2, #FFE4E6, #FCE7F3)",
   }}
