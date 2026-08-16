@@ -95,11 +95,10 @@ const runKm = athleteActivities
   return (
    <main
  style={{
-  padding: "20px",
+  padding: "12px",
   fontFamily: "Arial",
   minHeight: "100vh",
   width: "100%",
-  overflowX: "hidden",
     background:
       "linear-gradient(135deg, #FFF1F2, #FFE4E6, #FCE7F3)",
   }}
@@ -211,16 +210,7 @@ const runKm = athleteActivities
   >
     (km)
   </span>
-</th>
-            <th
-  style={{
-    border: "1px solid #BFC5CC",
-    padding: "12px",
-    textAlign: "center",
-  }}
->
-  Streak
-</th>
+
             <th
   style={{
     border: "1px solid #BFC5CC",
@@ -288,14 +278,6 @@ const runKm = athleteActivities
   {row.runKm.toFixed(1)}
 </td>
 
-<td
-  style={{
-    border: "1px solid #D1D5DB",
-    padding: "10px 15px",
-  }}
->
-  {row.streakDays}
-</td>
 
 <td
   style={{
