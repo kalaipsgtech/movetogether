@@ -94,18 +94,23 @@ const runKm = athleteActivities
 
   return (
    <main
-  style={{
-    padding: "40px",
-    fontFamily: "Arial",
-    minHeight: "100vh",
+ style={{
+  padding: "20px",
+  fontFamily: "Arial",
+  minHeight: "100vh",
+  width: "100%",
+  overflowX: "hidden",
+    width: "100%",
+    overflowX: "hidden",
     background:
       "linear-gradient(135deg, #FFF1F2, #FFE4E6, #FCE7F3)",
   }}
 >
+
  <h1
   style={{
     fontFamily: "'Trebuchet MS', 'Segoe UI', sans-serif",
-    fontSize: "40px",
+    fontSize: "clamp(28px, 5vw, 40px)",
     fontWeight: "900",
     textAlign: "center",
     color: "#0F766E",
@@ -115,17 +120,23 @@ const runKm = athleteActivities
   🏆 MoveTogether Fitness Challenge
 </h1>
 
-      <table
+      <div
   style={{
-    width: "auto",
-    margin: "0 auto",
-    borderCollapse: "collapse",
-    background: "white",
-    borderRadius: "12px",
-    overflow: "hidden",
-    boxShadow: "0 10px 30px rgba(0,0,0,0.15)",
+    width: "100%",
+    overflowX: "auto",
   }}
 >
+  <table
+    style={{
+      width: "auto",
+      margin: "0 auto",
+      borderCollapse: "collapse",
+      background: "white",
+      borderRadius: "12px",
+      overflow: "hidden",
+      boxShadow: "0 10px 30px rgba(0,0,0,0.15)",
+    }}
+  >
         <thead>
           <tr>
             <th
@@ -302,6 +313,7 @@ const runKm = athleteActivities
         </tbody>
 
       </table>
+        </div>
 
       <h2
         style={{
