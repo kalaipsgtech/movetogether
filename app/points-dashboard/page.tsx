@@ -210,17 +210,26 @@ const runKm = athleteActivities
   >
     (km)
   </span>
+</th>
 
-            <th
+<th
   style={{
     border: "1px solid #BFC5CC",
     padding: "12px",
     textAlign: "center",
   }}
 >
-  Total Points
+  Total
+  <br />
+  <span
+    style={{
+      fontSize: "12px",
+      color: "#666",
+    }}
+  >
+    Points
+  </span>
 </th>
-
           </tr>
         </thead>
 
