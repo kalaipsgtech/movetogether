@@ -300,121 +300,126 @@ const runKm = athleteActivities
             </tr>
           ))}
         </tbody>
+
       </table>
+
+      <h2
+        style={{
+          marginTop: "40px",
+          marginBottom: "15px",
+          textAlign: "center",
+          color: "#0F766E",
+          fontWeight: "700",
+        }}
+      >
+        🏅 Activity Points System
+      </h2>
+
+      <table
+        style={{
+          margin: "0 auto",
+          borderCollapse: "collapse",
+          background: "white",
+          boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
+        }}
+      >
+        <thead>
+          <tr>
+            <th
+              style={{
+                border: "1px solid #BFC5CC",
+                padding: "10px 20px",
+              }}
+            >
+              Activity
+            </th>
+
+            <th
+              style={{
+                border: "1px solid #BFC5CC",
+                padding: "10px 20px",
+              }}
+            >
+              Points / km
+            </th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td
+              style={{
+                border: "1px solid #BFC5CC",
+                padding: "10px 20px",
+              }}
+            >
+              🚴 Ride
+            </td>
+            <td
+              style={{
+                border: "1px solid #BFC5CC",
+                padding: "10px 20px",
+                textAlign: "center",
+              }}
+            >
+              0.5
+            </td>
+          </tr>
+
+          <tr>
+            <td
+              style={{
+                border: "1px solid #BFC5CC",
+                padding: "10px 20px",
+              }}
+            >
+              🚶 Walk
+            </td>
+            <td
+              style={{
+                border: "1px solid #BFC5CC",
+                padding: "10px 20px",
+                textAlign: "center",
+              }}
+            >
+              1
+            </td>
+          </tr>
+
+          <tr>
+            <td
+              style={{
+                border: "1px solid #BFC5CC",
+                padding: "10px 20px",
+              }}
+            >
+              🏃 Run
+            </td>
+            <td
+              style={{
+                border: "1px solid #BFC5CC",
+                padding: "10px 20px",
+                textAlign: "center",
+              }}
+            >
+              2
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p
+        style={{
+          textAlign: "center",
+          marginTop: "10px",
+          color: "#6B7280",
+          fontSize: "14px",
+        }}
+      >
+        Points are awarded based on the distance completed in each activity.
+      </p>
+
     </main>
   );
 }
 
-<h2
-  style={{
-    marginTop: "40px",
-    marginBottom: "15px",
-    textAlign: "center",
-    color: "#0F766E",
-    fontWeight: "700",
-  }}
->
-  🎯 How Points Are Calculated
-</h2>
-
-<table
-  style={{
-    margin: "0 auto",
-    borderCollapse: "collapse",
-    background: "white",
-    boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
-  }}
->
-  <thead>
-    <tr
-      style={{
-        background:
-          "linear-gradient(90deg, #0F766E, #14B8A6)",
-        color: "white",
-      }}
-    >
-      <th
-        style={{
-          border: "1px solid #BFC5CC",
-          padding: "10px 20px",
-        }}
-      >
-        Activity
-      </th>
-
-      <th
-        style={{
-          border: "1px solid #BFC5CC",
-          padding: "10px 20px",
-        }}
-      >
-        Points / km
-      </th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <tr>
-      <td
-        style={{
-          border: "1px solid #BFC5CC",
-          padding: "10px 20px",
-        }}
-      >
-        🚴 Ride
-      </td>
-
-      <td
-        style={{
-          border: "1px solid #BFC5CC",
-          padding: "10px 20px",
-          textAlign: "center",
-        }}
-      >
-        0.5
-      </td>
-    </tr>
-
-    <tr>
-      <td
-        style={{
-          border: "1px solid #BFC5CC",
-          padding: "10px 20px",
-        }}
-      >
-        🚶 Walk
-      </td>
-
-      <td
-        style={{
-          border: "1px solid #BFC5CC",
-          padding: "10px 20px",
-          textAlign: "center",
-        }}
-      >
-        1
-      </td>
-    </tr>
-
-    <tr>
-      <td
-        style={{
-          border: "1px solid #BFC5CC",
-          padding: "10px 20px",
-        }}
-      >
-        🏃 Run
-      </td>
-
-      <td
-        style={{
-          border: "1px solid #BFC5CC",
-          padding: "10px 20px",
-          textAlign: "center",
-        }}
-      >
-        2
-      </td>
-    </tr>
-  </tbody>
-</table>
