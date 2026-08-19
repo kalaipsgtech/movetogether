@@ -2,6 +2,9 @@ import { supabase } from "@/lib/supabase";
 
 export const dynamic = "force-dynamic";
 
+const CHALLENGE_START = new Date("2026-08-20");
+const CHALLENGE_END = new Date("2026-09-08");
+
 function calculateStreak(activities: any[]) {
   return 0;
 }
@@ -19,10 +22,19 @@ export default async function PointsDashboardPage() {
   const rows =
     athletes?.map((athlete) => {
       const athleteActivities =
-        activities?.filter(
-          (a) =>
-            a.athlete_id === athlete.athlete_id
-        ) || [];
+  activities?.filter((a) => {
+    if (a.athlete_id !== athlete.athlete_id)
+      return false;
+
+    const activityDate = new Date(
+      a.activity_date
+    );
+
+    return (
+      activityDate >= CHALLENGE_START &&
+      activityDate <= CHALLENGE_END
+    );
+  }) || [];
 
       const streakDays =
   calculateStreak(athleteActivities);
@@ -116,7 +128,18 @@ const runKm = athleteActivities
 >
   🏆 MoveTogether Fitness Challenge
 </h1>
-
+<div
+  style={{
+    textAlign: "center",
+    marginBottom: "20px",
+    color: "#0F766E",
+    fontWeight: "600",
+    fontSize: "18px",
+  }}
+>
+  📅 Challenge Period:
+  20 Aug 2026 - 08 Sep 2026
+</div>
       <div
   style={{
     width: "100%",
