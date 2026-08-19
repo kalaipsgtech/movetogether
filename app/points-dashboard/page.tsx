@@ -137,8 +137,8 @@ const runKm = athleteActivities
     fontSize: "18px",
   }}
 >
-  📅 Challenge Period:
-  20 Aug 2026 - 08 Sep 2026
+  📅 Trial Period:
+  16 Aug 2026 - 19 Aug 2026
 </div>
       <div
   style={{
