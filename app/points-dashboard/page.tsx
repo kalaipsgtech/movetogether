@@ -2,8 +2,8 @@ import { supabase } from "@/lib/supabase";
 
 export const dynamic = "force-dynamic";
 
-const CHALLENGE_START = new Date("2026-08-16");
-const CHALLENGE_END = new Date("2026-08-20");
+const CHALLENGE_START = new Date("2026-08-20");
+const CHALLENGE_END = new Date("2026-09-08");
 
 function calculateStreak(activities: any[]) {
   return 0;
@@ -137,8 +137,8 @@ const runKm = athleteActivities
     fontSize: "18px",
   }}
 >
-  📅 Trial Period:
-  16 Aug 2026 - 19 Aug 2026
+  📅 Challenge Period:
+  20 Aug 2026 - 08 Sep 2026
 </div>
       <div
   style={{
