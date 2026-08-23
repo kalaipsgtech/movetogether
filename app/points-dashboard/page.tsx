@@ -2,8 +2,14 @@ import { supabase } from "@/lib/supabase";
 
 export const dynamic = "force-dynamic";
 
-const CHALLENGE_START = new Date("2026-08-20");
-const CHALLENGE_END = new Date("2026-09-08");
+const CHALLENGE_START = "2026-08-20";
+const CHALLENGE_END = "2026-09-08";
+
+function getISTDateString(date: string | Date) {
+  return new Date(date).toLocaleDateString("en-CA", {
+    timeZone: "Asia/Kolkata",
+  });
+}
 
 function calculateStreak(activities: any[]) {
   return 0;
@@ -26,13 +32,13 @@ export default async function PointsDashboardPage() {
     if (a.athlete_id !== athlete.athlete_id)
       return false;
 
-    const activityDate = new Date(
+    const activityDateIST = getISTDateString(
       a.activity_date
     );
 
     return (
-      activityDate >= CHALLENGE_START &&
-      activityDate <= CHALLENGE_END
+      activityDateIST >= CHALLENGE_START &&
+      activityDateIST <= CHALLENGE_END
     );
   }) || [];
 
