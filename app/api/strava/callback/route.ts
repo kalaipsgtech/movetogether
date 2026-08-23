@@ -133,13 +133,17 @@ console.log(
       athlete_id: athlete.id,
       first_name: athlete.firstname,
       last_name: athlete.lastname,
+
       refresh_token: tokenData.refresh_token,
+      access_token: tokenData.access_token,
+      expires_at: tokenData.expires_at,
+
+      connected_at: new Date().toISOString(),
     },
     {
       onConflict: "athlete_id",
     }
   );
-
 console.log("Supabase Error:", JSON.stringify(error, null, 2));
 console.log("Athlete:", JSON.stringify(athlete, null, 2));
 
