@@ -114,4 +114,93 @@ export default async function StatsPage() {
     buildLeaderboard(walkingMap);
 
   const runners =
-    buildLeaderboard
+    buildLeaderboard(runningMap);
+
+  const riders =
+    buildLeaderboard(cyclingMap);
+
+  function renderCard(
+    title: string,
+    emoji: string,
+    data: any[]
+  ) {
+    return (
+      <div className="bg-white rounded-xl shadow p-4 mb-6">
+        <h2 className="text-xl font-bold mb-4">
+          {emoji} {title}
+        </h2>
+
+        <table className="w-full">
+          <thead>
+            <tr className="border-b">
+              <th className="text-left py-2">
+                Rank
+              </th>
+              <th className="text-left py-2">
+                Athlete
+              </th>
+              <th className="text-right py-2">
+                Distance
+              </th>
+            </tr>
+          </thead>
+
+          <tbody>
+            {data.map(
+              (row, index) => (
+                <tr
+                  key={row.athleteId}
+                  className="border-b"
+                >
+                  <td className="py-2">
+                    {index === 0
+                      ? "🥇"
+                      : index === 1
+                      ? "🥈"
+                      : index === 2
+                      ? "🥉"
+                      : index + 1}
+                  </td>
+
+                  <td className="py-2">
+                    {row.athleteName}
+                  </td>
+
+                  <td className="py-2 text-right">
+                    {row.distance.toFixed(1)} km
+                  </td>
+                </tr>
+              )
+            )}
+          </tbody>
+        </table>
+      </div>
+    );
+  }
+
+  return (
+    <main className="min-h-screen bg-rose-50 p-4 pb-28">
+      <h1 className="text-3xl font-bold text-center mb-6">
+        📈 Fitness Statistics
+      </h1>
+
+      {renderCard(
+        "Walking Champions",
+        "🚶",
+        walkers
+      )}
+
+      {renderCard(
+        "Running Champions",
+        "🏃",
+        runners
+      )}
+
+      {renderCard(
+        "Cycling Champions",
+        "🚴",
+        riders
+      )}
+    </main>
+  );
+}
