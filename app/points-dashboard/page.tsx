@@ -118,7 +118,7 @@ const runKm = athleteActivities
   minHeight: "100vh",
   width: "100%",
     background:
-      "linear-gradient(135deg, #FFF1F2, #FFE4E6, #FCE7F3)",
+      "linear-gradient(135deg, #0F051D, #1A0933, #12071F)",
   }}
 >
 
@@ -128,7 +128,7 @@ const runKm = athleteActivities
     fontSize: "clamp(28px, 5vw, 40px)",
     fontWeight: "900",
     textAlign: "center",
-    color: "#0F766E",
+    color: "#FCD34D",
     textShadow: "2px 2px 8px rgba(0,0,0,0.15)",
   }}
 >
@@ -138,7 +138,7 @@ const runKm = athleteActivities
   style={{
     textAlign: "center",
     marginBottom: "20px",
-    color: "#0F766E",
+    color: "#FACC15",
     fontWeight: "600",
     fontSize: "18px",
   }}
@@ -157,8 +157,8 @@ const runKm = athleteActivities
       width: "auto",
       margin: "0 auto",
       borderCollapse: "collapse",
-      background: "white",
-      borderRadius: "12px",
+     background: "#160F2E",
+      border: "2px solid #EAB308",
       overflow: "hidden",
       boxShadow: "0 10px 30px rgba(0,0,0,0.15)",
     }}
@@ -176,7 +176,9 @@ const runKm = athleteActivities
           
             <th
   style={{
-    border: "1px solid #BFC5CC",
+    border: "1px solid #312E81",
+color: "#FBBF24",
+backgroundColor: "#1E1238",
     padding: "12px",
     textAlign: "center",
   }}
@@ -186,7 +188,9 @@ const runKm = athleteActivities
 
             <th
   style={{
-    border: "1px solid #BFC5CC",
+    border: "1px solid #312E81",
+color: "#FBBF24",
+backgroundColor: "#1E1238",
     padding: "12px",
     textAlign: "center",
   }}
@@ -205,7 +209,9 @@ const runKm = athleteActivities
             
            <th
   style={{
-    border: "1px solid #BFC5CC",
+    border: "1px solid #312E81",
+color: "#FBBF24",
+backgroundColor: "#1E1238",
     padding: "12px",
     textAlign: "center",
   }}
@@ -224,7 +230,9 @@ const runKm = athleteActivities
             
             <th
   style={{
-    border: "1px solid #BFC5CC",
+    border: "1px solid #312E81",
+color: "#FBBF24",
+backgroundColor: "#1E1238",
     padding: "12px",
     textAlign: "center",
   }}
@@ -243,7 +251,9 @@ const runKm = athleteActivities
 
 <th
   style={{
-    border: "1px solid #BFC5CC",
+    border: "1px solid #312E81",
+color: "#FBBF24",
+backgroundColor: "#1E1238",
     padding: "12px",
     textAlign: "center",
   }}
@@ -265,11 +275,15 @@ const runKm = athleteActivities
         <tbody>
           {rows.map((row, index) => (
             <tr
-              key={row.name}
-              style={{
-                textAlign: "center",
-              }}
-            >
+  key={row.name}
+  style={{
+    textAlign: "center",
+    backgroundColor:
+      row.name.includes("Kalaivanan")
+        ? "#24124A"
+        : "transparent",
+  }}
+>
 <td>
   {index === 0
     ? "🥇"
@@ -282,8 +296,10 @@ const runKm = athleteActivities
 
 <td
   style={{
-    border: "1px solid #D1D5DB",
+    border: "1px solid #312E81",
     padding: "10px 15px",
+    color: "#FFFFFF",
+    fontWeight: "600",
   }}
 >
   {row.name}
@@ -291,39 +307,76 @@ const runKm = athleteActivities
 
 <td
   style={{
-    border: "1px solid #D1D5DB",
+    border: "1px solid #312E81",
     padding: "10px 15px",
+    color: "#FFFFFF",
+    fontWeight: "600",
+  }}
+>
+  <span
+  style={{
+    color: "#34D399",
+    fontWeight: "700",
   }}
 >
   {row.walkKm.toFixed(1)}
+</span>
 </td>
 
 <td
   style={{
-    border: "1px solid #D1D5DB",
+    border: "1px solid #312E81",
     padding: "10px 15px",
+    color: "#FFFFFF",
+    fontWeight: "600",
+  }}
+>
+  <span
+  style={{
+    color: "#60A5FA",
+    fontWeight: "700",
   }}
 >
   {row.rideKm.toFixed(1)}
+</span>
 </td>
 
 <td
   style={{
-    border: "1px solid #D1D5DB",
+    border: "1px solid #312E81",
     padding: "10px 15px",
+    color: "#FFFFFF",
+    fontWeight: "600",
+  }}
+>
+ <span
+  style={{
+    color: "#FB7185",
+    fontWeight: "700",
   }}
 >
   {row.runKm.toFixed(1)}
+</span>
 </td>
 
 
 <td
   style={{
-    border: "1px solid #D1D5DB",
+    border: "1px solid #312E81",
     padding: "10px 15px",
+    color: "#FFFFFF",
+    fontWeight: "600",
+  }}
+>
+  <span
+  style={{
+    color: "#FCD34D",
+    fontWeight: "800",
+    fontSize: "18px",
   }}
 >
   {Math.round(row.totalPoints)}
+</span>
 </td>
               
             </tr>
@@ -349,7 +402,7 @@ const runKm = athleteActivities
         style={{
           margin: "0 auto",
           borderCollapse: "collapse",
-          background: "white",
+          background: "#160F2E",
           boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
         }}
       >
@@ -357,7 +410,9 @@ const runKm = athleteActivities
           <tr>
             <th
               style={{
-                border: "1px solid #BFC5CC",
+                border: "1px solid #312E81",
+color: "#FBBF24",
+backgroundColor: "#1E1238",
                 padding: "10px 20px",
               }}
             >
@@ -366,7 +421,9 @@ const runKm = athleteActivities
 
             <th
               style={{
-                border: "1px solid #BFC5CC",
+                border: "1px solid #312E81",
+color: "#FBBF24",
+backgroundColor: "#1E1238",
                 padding: "10px 20px",
               }}
             >
@@ -379,7 +436,9 @@ const runKm = athleteActivities
           <tr>
             <td
               style={{
-                border: "1px solid #BFC5CC",
+                border: "1px solid #312E81",
+color: "#FBBF24",
+backgroundColor: "#1E1238",
                 padding: "10px 20px",
               }}
             >
@@ -387,7 +446,9 @@ const runKm = athleteActivities
             </td>
             <td
               style={{
-                border: "1px solid #BFC5CC",
+                border: "1px solid #312E81",
+color: "#FBBF24",
+backgroundColor: "#1E1238",
                 padding: "10px 20px",
                 textAlign: "center",
               }}
@@ -399,7 +460,9 @@ const runKm = athleteActivities
           <tr>
             <td
               style={{
-                border: "1px solid #BFC5CC",
+                border: "1px solid #312E81",
+color: "#FBBF24",
+backgroundColor: "#1E1238",
                 padding: "10px 20px",
               }}
             >
@@ -407,7 +470,9 @@ const runKm = athleteActivities
             </td>
             <td
               style={{
-                border: "1px solid #BFC5CC",
+               border: "1px solid #312E81",
+color: "#FBBF24",
+backgroundColor: "#1E1238",
                 padding: "10px 20px",
                 textAlign: "center",
               }}
@@ -419,7 +484,9 @@ const runKm = athleteActivities
           <tr>
             <td
               style={{
-                border: "1px solid #BFC5CC",
+                border: "1px solid #312E81",
+color: "#FBBF24",
+backgroundColor: "#1E1238",
                 padding: "10px 20px",
               }}
             >
@@ -427,7 +494,9 @@ const runKm = athleteActivities
             </td>
             <td
               style={{
-                border: "1px solid #BFC5CC",
+                border: "1px solid #312E81",
+color: "#FBBF24",
+backgroundColor: "#1E1238",
                 padding: "10px 20px",
                 textAlign: "center",
               }}
