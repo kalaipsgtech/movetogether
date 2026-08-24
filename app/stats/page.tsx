@@ -14,6 +14,8 @@ type Athlete = {
   name?: string;
   firstname?: string;
   lastname?: string;
+  first_name?: string;
+  last_name?: string;
 };
 
 type Activity = {
@@ -23,12 +25,39 @@ type Activity = {
 };
 
 function getAthleteName(athlete: Athlete) {
-  return (
-    athlete.athlete_name ||
-    athlete.name ||
-    `${athlete.firstname || ""} ${athlete.lastname || ""}`.trim() ||
-    `Athlete ${athlete.athlete_id}`
-  );
+
+  if (
+    athlete.athlete_name &&
+    athlete.athlete_name.trim()
+  ) {
+    return athlete.athlete_name.trim();
+  }
+
+  if (
+    athlete.name &&
+    athlete.name.trim()
+  ) {
+    return athlete.name.trim();
+  }
+
+  const firstName =
+    athlete.firstname ||
+    athlete.first_name ||
+    "";
+
+  const lastName =
+    athlete.lastname ||
+    athlete.last_name ||
+    "";
+
+  const fullName =
+    `${firstName} ${lastName}`.trim();
+
+  if (fullName) {
+    return fullName;
+  }
+
+  return `Athlete ${athlete.athlete_id}`;
 }
 
 export default async function StatsPage() {
