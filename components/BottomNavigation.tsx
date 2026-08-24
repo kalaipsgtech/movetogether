@@ -8,22 +8,22 @@ export default function BottomNavigation() {
       <div className="flex justify-around py-3 text-white">
 
         /points-dashboard
-          🏆 Leaderboard
+         <Link href  🏆 Leaderboard
         </Link>
 
         /streaks
-          🔥 Streaks
+         <Link href  🔥 Streaks
         </Link>
 
         <Link href       📈 Stats
         </Link>
 
         /family
-          👨‍👩‍👧‍👦 Family
+        <Link href   👨‍👩‍👧‍👦 Family
         </Link>
 
         /challenge
-          🏅 Challenge
+         <Link href  🏅 Challenge
         </Link>
 
       </div>
