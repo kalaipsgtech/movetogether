@@ -171,7 +171,13 @@ function calculateCurrentStreak(
   todayKey: string
 ) {
   let streak = 0;
-  let dateToCheck = todayKey;
+
+  const hasToday =
+    activeDateKeys.has(todayKey);
+
+  let dateToCheck = hasToday
+    ? todayKey
+    : getPreviousDateKey(todayKey);
 
   while (
     activeDateKeys.has(dateToCheck)
