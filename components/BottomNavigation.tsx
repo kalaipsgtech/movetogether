@@ -19,11 +19,12 @@ export default function BottomNavigation() {
           📈 Stats
         </Link>
 
-        /family
+        <Linkly
           👨‍👩‍👧‍👦 Family
         </Link>
 
-        <Link href="/        🏅 Challenge
+        /challenge
+          🏅 Challenge
         </Link>
 
       </div>
