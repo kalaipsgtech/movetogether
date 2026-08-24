@@ -15,11 +15,10 @@ export default function BottomNavigation() {
           🔥 Streaks
         </Link>
 
-        /stats
-          📈 Stats
+        <Link href       📈 Stats
         </Link>
 
-        <Linkly
+        /family
           👨‍👩‍👧‍👦 Family
         </Link>
 
