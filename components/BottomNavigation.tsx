@@ -11,20 +11,17 @@ export default function BottomNavigation() {
           🏆 Leaderboard
         </Link>
 
-        /streaks
-          🔥 Streaks
+        <Link href         🔥 Streaks
         </Link>
 
-        /stats
-          📈 Stats
+        <Link href="/stats� Stats
         </Link>
 
         /family
           👨‍👩‍👧‍👦 Family
         </Link>
 
-        /challenge
-          🏅 Challenge
+        <Link href="/        🏅 Challenge
         </Link>
 
       </div>
