@@ -22,8 +22,8 @@ type Activity = {
   athlete_id: number;
   activity_type: string;
   distance: number;
+  activity_date: string;
 };
-
 function getAthleteName(athlete: Athlete) {
 
   if (
@@ -65,10 +65,10 @@ export default async function StatsPage() {
     await Promise.all([
       supabase.from("athletes").select("*"),
       supabase
-        .from("Activities")
-        .select(
-          "athlete_id, activity_type, distance"
-        ),
+  .from("Activities")
+  .select(
+    "athlete_id, activity_type, distance, activity_date"
+  ),
     ]);
 
   const athleteMap = new Map();
@@ -84,9 +84,27 @@ export default async function StatsPage() {
   const runningMap = new Map();
   const cyclingMap = new Map();
 
+  const challengeStart = new Date(
+  "2026-08-20T00:00:00+05:30"
+);
+
+const challengeEnd = new Date(
+  "2026-09-08T23:59:59+05:30"
+);
   activities?.forEach((activity) => {
-    const distanceKm =
-      (activity.distance || 0) / 1000;
+
+  const activityDate =
+    new Date(activity.activity_date);
+
+  if (
+    activityDate < challengeStart ||
+    activityDate > challengeEnd
+  ) {
+    return;
+  }
+
+  const distanceKm =
+    (activity.distance || 0) / 1000;
 
     if (
       activity.activity_type === "Walk"
